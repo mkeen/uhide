@@ -2,7 +2,7 @@
 
 ###Personal encryption fit for a spy
 
-## 🅿️😐🇼e®️ed 🅱️🇾 eⓂ️🤓🇯ℹ️ tec🏨n😎🇱🅾️g🇾
+## 🅿️😐🇼e®️ed  🅱️🇾  eⓂ️🤓🇯ℹ️  tec🏨n😎🇱🅾️g🇾
 
 **Install:** `gem install ☔` 
 

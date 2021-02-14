@@ -70,12 +70,8 @@ def 🤖 🗣️
     🔒 🏷️, 💎
     
   when :reset
-    🚽
-    
     if ❓($🔑, simple: false) == $password
-      File.delete './ddllv'
-      File.delete './🧂'
-      File.delete './📏'
+      ['ddllv', '🧂', '📏'].each_entry{ |item| File.delete "./#{item}" }
       exit!
     else
       puts INVALID_KEY
