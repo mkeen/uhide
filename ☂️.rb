@@ -92,10 +92,10 @@ def 💾
   
   was_bootstrapped = !(not $cache['ddllv'])
   📖 = 🗃️ 'ddllv', {}, ⚛️: ⚛️
-  save 'ddllv', 📖, ⚛️: ⚛️ if was_bootstrapped
+  📀 'ddllv', 📖, ⚛️: ⚛️ if was_bootstrapped
 end
 
-def save 🗂️, 📖, ⚛️: false
+def 📀 🗂️, 📖, ⚛️: false
   if ⚛️
     📕 = ⚛️.encrypt_and_sign 📖
   else
@@ -115,7 +115,7 @@ def 🗃️ 🗂️, 🔀, ⚛️: false
   begin
     📕 = File.read "./#{🗂️}"
   rescue Errno::ENOENT
-    📕 = save(🗂️, 🔀, ⚛️: ⚛️)
+    📕 = 📀 🗂️, 🔀, ⚛️: ⚛️
   end
   
   if not 📕.empty?
