@@ -2,7 +2,7 @@
 
 🅿️😐🇼e®️ed  🅱️🇾  eⓂ️🤓🇯ℹ️  tec🏨n😎🇱🅾️g🇾
 
-### 🕵️ Personal encryption fit for a spy
+#### 🕵️ Personal encryption fit for a spy
 
 Store passwords, phone numbers, email addresses, credit card numbers -- any sensitive text.
 
