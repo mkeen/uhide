@@ -88,7 +88,6 @@ def 🤖 🗣️
 end
 
 def 💾
-  
   ⚛️ = ActiveSupport::MessageEncryptor.new(
     ActiveSupport::KeyGenerator.new($password).generate_key($🧂.call, $📏.call)  
   )
