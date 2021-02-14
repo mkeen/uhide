@@ -4,7 +4,7 @@
 
 Store passwords, phone numbers, email addresses, credit card numbers -- any sensitive text.
 
-**Install:** `gem install ☔` 
+**Install:** `gem install uhide` 
 
 **Usage**: `☔ --help`
 
