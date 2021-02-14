@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
-  s.name        = '☂️'
+  s.name        = 'uhide'
   s.version     = '0.0.1'
-  s.summary     = "uhide: Personal encryption fit for a spy"
+  s.summary     = "☂️: Personal encryption fit for a spy"
   s.description = "Allows a regular person to maintain a named list of secrets that's encrypted at rest"
   s.authors     = ["Mike Keen"]
   s.email       = 'mwk@mikekeen.com'
