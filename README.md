@@ -2,7 +2,7 @@
 
 #### 🕵️ Personal encryption fit for a spy
 
-🅿️😐🇼e®️ed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🅱️🇾&nbsp;&nbsp;&nbsp;&nbsp;eⓂ️🤓🇯ℹ️&nbsp&nbsp;;&nbsp;&nbsp;tec🏨n😎🇱🅾️g🇾
+🅿️😐🇼e®️ed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🅱️🇾&nbsp;&nbsp;&nbsp;&nbsp;eⓂ️🤓🇯ℹ️&nbsp;&nbsp;&nbsp;&nbsp;tec🏨n😎🇱🅾️g🇾
 
 Store passwords, phone numbers, email addresses, credit card numbers -- any sensitive text.
 
