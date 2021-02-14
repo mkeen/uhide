@@ -1,8 +1,11 @@
+require 'rubygems'
+require 'bundler/setup'
+require 'yaml'
 require 'io/console'
 require 'securerandom'
-require 'active_support'
-require 'colorize'
-require 'yaml'
+
+Bundler.require(:default)
+
 
 ☔ = " ☔ > "
 $🔑 = " 🔑 > "
