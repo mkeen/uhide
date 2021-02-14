@@ -5,18 +5,14 @@ require 'colorize'
 require 'yaml'
 
 ☔ = " ☔ > "
-🔑 = " 🔑 > "
-
+$🔑 = " 🔑 > "
 $🧂 = (lambda { 🗃️ '🧂', SecureRandom.random_bytes })
-
 $📏 = lambda { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
-
 INVALID_KEY = 'invalid key'.colorize(:red)
-
 $cache = {}
 
 def password?
-  🧼 STDIN.noecho(&:gets).chomp
+  🧼 STDIN.noecho(&:gets)
 end
 
 def 🚽
@@ -24,10 +20,12 @@ def 🚽
   $stdout.flush
 end
 
-def ❓ 🔑
+def ❓ 🔑, simple: true
   print 🔑
-  $password = password?
+  password = password?
+  $password = password if simple
   🚽
+  return password
 end
 
 def 🧼 🗑️
@@ -36,9 +34,9 @@ end
 
 def 🔓 🏷️: nil
   if 🏷️.nil?
-    puts $index
+    puts $cache['ddllv']
   else
-    puts $index[🏷️]
+    puts $cache['ddllv'][🏷️]
   end
   
   📕 = File.read './🧂'
@@ -53,7 +51,7 @@ def 🔓 🏷️: nil
 end
 
 def 🔒 🏷️, 💎
-  $index[🏷️] = 💎
+  $cache['ddllv'][🏷️] = 💎
   💾
 end
 
@@ -71,13 +69,13 @@ def 🤖 🗣️
   when :set
     🔒 🏷️, 💎
     
-  when :setup
+  when :reset
     🚽
-    password = password?
-    🚽
-    if password == $password
-      File.write './ddllv', ''
-      File.write './🧂', ''
+    
+    if ❓($🔑, simple: false) == $password
+      File.delete './ddllv'
+      File.delete './🧂'
+      File.delete './📏'
       exit!
     else
       puts INVALID_KEY
@@ -92,50 +90,58 @@ def 💾
     ActiveSupport::KeyGenerator.new($password).generate_key($🧂.call, $📏.call)  
   )
   
-  unless $index
-    📕 = File.read './ddllv'
-    unless 📕.empty?
+  was_bootstrapped = !(not $cache['ddllv'])
+  📖 = 🗃️ 'ddllv', {}, ⚛️: ⚛️
+  save 'ddllv', 📖, ⚛️: ⚛️ if was_bootstrapped
+end
+
+def save 🗂️, 📖, ⚛️: false
+  if ⚛️
+    📕 = ⚛️.encrypt_and_sign 📖
+  else
+    📕 = 📖
+  end
+  
+  📕 = Marshal.dump(📕) 
+  File.write "./#{🗂️}", 📕
+  return 📕
+end
+
+def 🗃️ 🗂️, 🔀, ⚛️: false
+  if $cache[🗂️]
+    return $cache[🗂️]
+  end
+  
+  begin
+    📕 = File.read "./#{🗂️}"
+  rescue Errno::ENOENT
+    📕 = save(🗂️, 🔀, ⚛️: ⚛️)
+  end
+  
+  if not 📕.empty?
+    📕 = Marshal.load 📕
+    
+    if ⚛️
       begin
-        📕 = Marshal.load(📕)
-        📖 = ⚛️.decrypt_and_verify(📕)
+        📖 = ⚛️.decrypt_and_verify 📕
       rescue ActiveSupport::MessageVerifier::InvalidSignature
         puts INVALID_KEY
         exit!
       end
       
-      return YAML.load 📖
+    else
+      📖 = 📕
     end
     
-    return {}
-    
-  else
-    📕 = ⚛️.encrypt_and_sign($index.to_yaml)  
-    File.write './ddllv', Marshal.dump(📕)
-    return $index.to_yaml
   end
   
-end
-
-def 🗃️ 🗂️, 🔀
-  if $cache[🗂️]
-    return $cache[🗂️]
-  end
-  
-  📕 = File.read "./#{🗂️}"
-  
-  if 📕.empty?
-    File.write "./#{🗂️}", Marshal.dump(🔀)
-    return $cache[🗂️] = 🔀
-  else
-    return $cache[🗂️] = Marshal.load(File.read "./#{🗂️}")
-  end
-  
+  return $cache[🗂️] = 📖
 end
 
 begin
-  ❓ 🔑
+  ❓ $🔑
   
-  $index = 💾
+  💾
   
   loop do
     print ☔
