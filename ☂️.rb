@@ -7,10 +7,13 @@ require 'yaml'
 ☔ = " ☔ > "
 🔑 = " 🔑 > "
 
+$🧂 = (lambda { 🗃️ '🧂', SecureRandom.random_bytes })
+
+$📏 = lambda { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
+
 INVALID_KEY = 'invalid key'.colorize(:red)
 
-$cached_🧂 = nil
-$cached_📏 = nil
+$cache = {}
 
 def password?
   🧼 STDIN.noecho(&:gets).chomp
@@ -40,11 +43,11 @@ def 🔓 🏷️: nil
   
   📕 = File.read './🧂'
   if 📕.empty?
-    🔀 = SecureRandom.random_bytes 📏
+    🔀 = SecureRandom.random_bytes $📏.call
     File.write './🧂', Marshal.dump(🔀)
-    return $cached_🧂 = 🔀
+    return $cache['🧂'] = 🔀
   else
-    return $cached_🧂 = Marshal.load(File.read './🧂')
+    return $cache['🧂'] = Marshal.load(File.read './🧂')
   end
   
 end
@@ -85,8 +88,9 @@ def 🤖 🗣️
 end
 
 def 💾
+  
   ⚛️ = ActiveSupport::MessageEncryptor.new(
-    ActiveSupport::KeyGenerator.new($password).generate_key(🧂, 📏)  
+    ActiveSupport::KeyGenerator.new($password).generate_key($🧂.call, $📏.call)  
   )
   
   unless $index
@@ -113,34 +117,18 @@ def 💾
   
 end
 
-def 🧂
-  if $cached_🧂
-    return $cached_🧂
+def 🗃️ 🗂️, 🔀
+  if $cache[🗂️]
+    return $cache[🗂️]
   end
   
-  📕 = File.read './🧂'
+  📕 = File.read "./#{🗂️}"
+  
   if 📕.empty?
-    🔀 = SecureRandom.random_bytes 📏
-    File.write './🧂', Marshal.dump(🔀)
-    return $cached_🧂 = 🔀
+    File.write "./#{🗂️}", Marshal.dump(🔀)
+    return $cache[🗂️] = 🔀
   else
-    return $cached_🧂 = Marshal.load(File.read './🧂')
-  end
-  
-end
-
-def 📏
-  if $cached_📏
-    return $cached_📏
-  end
-  
-  📕 = File.read './📏'
-  if 📕.empty?
-    🔀 = ActiveSupport::MessageEncryptor.key_len
-    File.write './📏', Marshal.dump(🔀)
-    return $cached_📏 = 🔀
-  else
-    return $cached_📏 = Marshal.load(File.read './📏')
+    return $cache[🗂️] = Marshal.load(File.read "./#{🗂️}")
   end
   
 end
