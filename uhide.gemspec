@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors       = ["Mike Keen"]
   s.email         = 'mwk@mikekeen.com'
   s.files         = ["lib/uhide.rb"]
-  gem.executables = ["bin/uhide"]
+  s.executables = ["bin/uhide"]
   s.homepage      =
     'https://github.com/mkeen/uhide'
   s.license       = 'ISC (BSD2/MIT)'
