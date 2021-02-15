@@ -1,10 +1,10 @@
 require 'rubygems'
-require 'bundler'
+require 'bundler' if File.exists?(ENV['BUNDLE_GEMFILE'])
 require 'yaml'
 require 'io/console'
 require 'securerandom'
-
-Bundler.require(:default)
+require 'colorize'
+require 'active_support'
 
 module Uhide
   
