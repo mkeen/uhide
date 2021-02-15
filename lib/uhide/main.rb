@@ -1,9 +1,10 @@
+INVALID_🔑 = 'invalid key'.colorize(:magenta)
+UNSUPPORTED_👾 = 'unsupported'.colorize(:magenta) + ' 👾'
+
 $☔ = " ☔ > "
 $🔑 = " 🔑 > "
 $🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
 $📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
-INVALID_KEY = 'invalid key'.colorize(:magenta)
-UNSUPPORTED_👾 = 'unsupported'.colorize(:magenta) + ' 👾'
 $🗄️ = {}
 
 def 🚽
@@ -46,41 +47,6 @@ def 🔒 🏷️, 💎
   💾
 end
 
-def 🤖 🗣️
-  👾, 🏷️, 💎 = 🗣️.split
-  
-  if 👾.nil?
-    return
-  end
-  
-  case 👾.to_sym
-  when :get
-    if 🏷️
-      🔓 🏷️: 🏷️
-    else
-      🔓
-    end
-    
-  when :set
-    🔒 🏷️, 💎
-    
-  when :exit
-    exit!
-    
-  when :reset
-    if ❓($🔑, simple: false) == $✍️
-      ['ddllv', '🧂', '📏'].each_entry{ |item| File.delete "./#{item}" }
-      exit!
-    else
-      puts INVALID_KEY
-    end
-    
-  else
-    puts UNSUPPORTED_👾
-  end
-  
-end
-
 def 💾
   ⚛️ = ActiveSupport::MessageEncryptor.new(
     ActiveSupport::KeyGenerator.new($✍️).generate_key($🧂.call, $📏.call)  
@@ -121,7 +87,7 @@ def 🗃️ 🗂️, 💎, ⚛️: false
       begin
         📖 = ⚛️.decrypt_and_verify 📕
       rescue ActiveSupport::MessageVerifier::InvalidSignature
-        puts INVALID_KEY
+        puts INVALID_🔑
         exit!
       end
       
@@ -132,6 +98,41 @@ def 🗃️ 🗂️, 💎, ⚛️: false
   end
   
   return $🗄️[🗂️] = 📖
+end
+
+def 🤖 🗣️
+  👾, 🏷️, 💎 = 🗣️.split
+  
+  if 👾.nil?
+    return
+  end
+  
+  case 👾.to_sym
+  when :get
+    if 🏷️
+      🔓 🏷️: 🏷️
+    else
+      🔓
+    end
+    
+  when :set
+    🔒 🏷️, 💎
+    
+  when :exit
+    exit!
+    
+  when :reset
+    if ❓($🔑, simple: false) == $✍️
+      ['ddllv', '🧂', '📏'].each_entry { |item| File.delete "./#{item}" }
+      exit!
+    else
+      puts INVALID_🔑
+    end
+    
+  else
+    puts UNSUPPORTED_👾
+  end
+  
 end
 
 class Uhide::Main
