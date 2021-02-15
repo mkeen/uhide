@@ -3,6 +3,7 @@ $🔑 = " 🔑 > "
 $🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
 $📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
 INVALID_KEY = 'invalid key'.colorize(:red)
+UNSUPPORTED_👾 = 'unsupported'.colorize(:red) + ' 👾'
 $cache = {}
 
 def password?
@@ -52,6 +53,10 @@ end
 def 🤖 🗣️
   👾, 🏷️, 💎 = 🗣️.split
   
+  if 👾.nil?
+    return
+  end
+  
   case 👾.to_sym
   when :get
     if 🏷️
@@ -74,6 +79,8 @@ def 🤖 🗣️
       puts INVALID_KEY
     end
     
+  else
+    puts UNSUPPORTED_👾
   end
   
 end
