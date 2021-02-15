@@ -6,7 +6,4 @@ Store passwords, phone numbers, email addresses, credit card numbers -- any sens
 
 **Install:** `gem install uhide` 
 
-**Usage**: `☔ --help`
-
-ISC (BSD 2 / MIT)
-
+**Usage**: `uhide --help`
