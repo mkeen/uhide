@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-include 'uhide.rb'
+load './../lib/uhide.rb'
 
