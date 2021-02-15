@@ -118,8 +118,11 @@ def 🤖 🗣️
   when :set
     🔒 🏷️, 💎
     
-  when :exit
+  when :exit, :quit
     exit!
+    
+  when :help
+    puts "For help, quit and run `uhide -h` from your shell"
     
   when :reset
     if ❓($🔑, simple: false) == $✍️
