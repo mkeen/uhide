@@ -1,7 +1,7 @@
 $☔ = " ☔ > "
 $🔑 = " 🔑 > "
-$🧂 = (lambda { 🗃️ '🧂', SecureRandom.random_bytes })
-$📏 = lambda { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
+$🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
+$📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
 INVALID_KEY = 'invalid key'.colorize(:red)
 $cache = {}
 
