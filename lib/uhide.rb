@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
+require 'bundler'
 require 'yaml'
 require 'io/console'
 require 'securerandom'
