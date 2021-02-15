@@ -1,11 +1,3 @@
-require 'rubygems'
-require 'bundler/setup'
-require 'yaml'
-require 'io/console'
-require 'securerandom'
-
-Bundler.require(:default)
-
 ☔ = " ☔ > "
 $🔑 = " 🔑 > "
 $🧂 = (lambda { 🗃️ '🧂', SecureRandom.random_bytes })
