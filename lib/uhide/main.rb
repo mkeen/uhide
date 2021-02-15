@@ -4,7 +4,7 @@ $🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
 $📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
 INVALID_KEY = 'invalid key'.colorize(:magenta)
 UNSUPPORTED_👾 = 'unsupported'.colorize(:magenta) + ' 👾'
-$cache = {}
+$🗄️ = {}
 
 def 🚽
   print "\r"
@@ -17,32 +17,32 @@ end
 
 def ❓ 🔑, simple: true
   print 🔑
-  password = 🧼 STDIN.noecho(&:gets)
-  $password = password if simple
+  ✍️ = 🧼 STDIN.noecho(&:gets)
+  $✍️ = ✍️ if simple
   🚽
-  return password
+  return ✍️
 end
 
 def 🔓 🏷️: nil
   if 🏷️.nil?
-    puts $cache['ddllv']
+    puts $🗄️['ddllv']
   else
-    puts $cache['ddllv'][🏷️]
+    puts $🗄️['ddllv'][🏷️]
   end
   
   📕 = File.read './🧂'
   if 📕.empty?
     🔀 = SecureRandom.random_bytes $📏.call
     File.write './🧂', Marshal.dump(🔀)
-    return $cache['🧂'] = 🔀
+    return $🗄️['🧂'] = 🔀
   else
-    return $cache['🧂'] = Marshal.load(File.read './🧂')
+    return $🗄️['🧂'] = Marshal.load(File.read './🧂')
   end
   
 end
 
 def 🔒 🏷️, 💎
-  $cache['ddllv'][🏷️] = 💎
+  $🗄️['ddllv'][🏷️] = 💎
   💾
 end
 
@@ -68,7 +68,7 @@ def 🤖 🗣️
     exit!
     
   when :reset
-    if ❓($🔑, simple: false) == $password
+    if ❓($🔑, simple: false) == $✍️
       ['ddllv', '🧂', '📏'].each_entry{ |item| File.delete "./#{item}" }
       exit!
     else
@@ -83,10 +83,10 @@ end
 
 def 💾
   ⚛️ = ActiveSupport::MessageEncryptor.new(
-    ActiveSupport::KeyGenerator.new($password).generate_key($🧂.call, $📏.call)  
+    ActiveSupport::KeyGenerator.new($✍️).generate_key($🧂.call, $📏.call)  
   )
   
-  was_bootstrapped = !(not $cache['ddllv'])
+  was_bootstrapped = !(not $🗄️['ddllv'])
   📖 = 🗃️ 'ddllv', {}, ⚛️: ⚛️
   📀 'ddllv', 📖, ⚛️: ⚛️ if was_bootstrapped
 end
@@ -104,8 +104,8 @@ def 📀 🗂️, 📖, ⚛️: false
 end
 
 def 🗃️ 🗂️, 💎, ⚛️: false
-  if $cache[🗂️]
-    return $cache[🗂️]
+  if $🗄️[🗂️]
+    return $🗄️[🗂️]
   end
   
   begin
@@ -131,7 +131,7 @@ def 🗃️ 🗂️, 💎, ⚛️: false
     
   end
   
-  return $cache[🗂️] = 📖
+  return $🗄️[🗂️] = 📖
 end
 
 class Uhide::Main
