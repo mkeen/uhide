@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.license          = 'ISC (BSD2/MIT)'
   s.extra_rdoc_files = ['README.md']
   s.add_runtime_dependency 'activesupport', '~> 6.0'
-  s.add_runtime_dependency 'colorize'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rubygems-tasks'
+  s.add_runtime_dependency 'colorize', '0.8.1'
+  s.add_development_dependency 'rake', '13.0.3'
+  s.add_development_dependency 'rubygems-tasks', '0.2.5'
 end
