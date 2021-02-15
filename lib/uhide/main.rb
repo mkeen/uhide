@@ -1,4 +1,4 @@
-$☔ = " ☔ > "
+$☂️ = " ☂️ > "
 $🔑 = " 🔑 > "
 $🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
 $📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
@@ -137,7 +137,7 @@ class Uhide::Main
         💾
         
         loop do
-          print $☔
+          print ☂️☔
           🤖(🧼 gets)
         end
         
