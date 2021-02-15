@@ -20,7 +20,6 @@ Get Started:
 Commands and Optional Arguments:
 - get [key-name]
 - set [key-name] [key-value]
-
     HELP
     exit!
   end

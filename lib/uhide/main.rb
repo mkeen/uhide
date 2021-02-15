@@ -6,25 +6,21 @@ INVALID_KEY = 'invalid key'.colorize(:magenta)
 UNSUPPORTED_👾 = 'unsupported'.colorize(:magenta) + ' 👾'
 $cache = {}
 
-def password?
-  🧼 STDIN.noecho(&:gets)
-end
-
 def 🚽
   print "\r"
   $stdout.flush
 end
 
+def 🧼 🗑️
+  🗑️.chomp
+end
+
 def ❓ 🔑, simple: true
   print 🔑
-  password = password?
+  password = 🧼 STDIN.noecho(&:gets)
   $password = password if simple
   🚽
   return password
-end
-
-def 🧼 🗑️
-  🗑️.chomp
 end
 
 def 🔓 🏷️: nil
@@ -107,7 +103,7 @@ def 📀 🗂️, 📖, ⚛️: false
   return 📕
 end
 
-def 🗃️ 🗂️, 🔀, ⚛️: false
+def 🗃️ 🗂️, 💎, ⚛️: false
   if $cache[🗂️]
     return $cache[🗂️]
   end
@@ -115,7 +111,7 @@ def 🗃️ 🗂️, 🔀, ⚛️: false
   begin
     📕 = File.read "./#{🗂️}"
   rescue Errno::ENOENT
-    📕 = 📀 🗂️, 🔀, ⚛️: ⚛️
+    📕 = 📀 🗂️, 💎, ⚛️: ⚛️
   end
   
   if not 📕.empty?
