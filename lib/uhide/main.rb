@@ -1,4 +1,4 @@
-$ = " ☔ > "
+$☔ = " ☔ > "
 $🔑 = " 🔑 > "
 $🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
 $📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
