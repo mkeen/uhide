@@ -3,7 +3,7 @@ $🔑 = " 🔑 > "
 $🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
 $📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
 INVALID_KEY = 'invalid key'.colorize(:red)
-UNSUPPORTED_👾 = 'unsupported'.colorize(:red) + ' 👾'
+UNSUPPORTED_👾 = 'unsupported'.colorize(:magenta) + ' 👾'
 $cache = {}
 
 def password?
