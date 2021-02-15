@@ -92,7 +92,7 @@ def 📀 🗂️, 📖, ⚛️: false
     📕 = 📖
   end
   
-  📕 = Marshal.dump(📕) 
+  📕 = Marshal.dump 📕
   File.write "./#{🗂️}", 📕
   return 📕
 end
