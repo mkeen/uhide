@@ -1,4 +1,4 @@
-$☂️ = " ☂️ > "
+$ = " ☔ > "
 $🔑 = " 🔑 > "
 $🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
 $📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
@@ -62,6 +62,9 @@ def 🤖 🗣️
     
   when :set
     🔒 🏷️, 💎
+    
+  when :exit
+    exit!
     
   when :reset
     if ❓($🔑, simple: false) == $password
@@ -137,7 +140,7 @@ class Uhide::Main
         💾
         
         loop do
-          print $☂️
+          print $☔
           🤖(🧼 gets)
         end
         
