@@ -29,9 +29,9 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (~> 6.0)
-  colorize
-  rake
-  rubygems-tasks
+  colorize (= 0.8.1)
+  rake (= 13.0.3)
+  rubygems-tasks (= 0.2.5)
 
 BUNDLED WITH
    2.2.0.rc.1
