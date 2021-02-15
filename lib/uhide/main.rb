@@ -137,7 +137,7 @@ class Uhide::Main
         💾
         
         loop do
-          print ☂️☔
+          print ☂️
           🤖(🧼 gets)
         end
         
