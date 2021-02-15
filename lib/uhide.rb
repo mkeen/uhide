@@ -137,17 +137,20 @@ def 🗃️ 🗂️, 🔀, ⚛️: false
   return $cache[🗂️] = 📖
 end
 
-begin
-  ❓ $🔑
-  
-  💾
-  
-  loop do
-    print ☔
-    🤖(🧼 gets)
+def uhide()
+  begin
+    ❓ $🔑
+    
+    💾
+    
+    loop do
+      print ☔
+      🤖(🧼 gets)
+    end
+    
+  rescue SystemExit, Interrupt
+    🚽
+    exit!
   end
   
-rescue SystemExit, Interrupt
-  🚽
-  exit!
 end

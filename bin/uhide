@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-load './../lib/uhide.rb'
-
+require 'uhide'
+uhide()
