@@ -2,7 +2,7 @@ $☔ = " ☔ > "
 $🔑 = " 🔑 > "
 $🧂 = -> { 🗃️ '🧂', SecureRandom.random_bytes }
 $📏 = -> { 🗃️ '📏', ActiveSupport::MessageEncryptor.key_len }
-INVALID_KEY = 'invalid key'.colorize(:red)
+INVALID_KEY = 'invalid key'.colorize(:magenta)
 UNSUPPORTED_👾 = 'unsupported'.colorize(:magenta) + ' 👾'
 $cache = {}
 
