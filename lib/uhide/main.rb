@@ -1,19 +1,11 @@
-$‼️🔑 = 'invalid key'.colorize(:magenta)
-$‼️👾 = 'unsupported'.colorize(:magenta) + ' 👾'
-
 class Uhide::Main
   @@☔ = " ☔ > "
   @@🔑 = " 🔑 > "
   @@🗄️ = {}
   
   class << self
-    def 🧂
-      🗃️ '🧂', SecureRandom.random_bytes
-    end
-    
-    def 📏
-      🗃️ '📏', ActiveSupport::MessageEncryptor.key_len
-    end
+    def ‼️ ❗; ❗.colorize :magenta; end
+    def 🧂; 🗃️ '🧂', SecureRandom.random_bytes; end
     
     def 🚽
       print "\r"
@@ -48,7 +40,7 @@ class Uhide::Main
     
     def 💾
       ⚛️ = ActiveSupport::MessageEncryptor.new(
-        ActiveSupport::KeyGenerator.new(@@✍️).generate_key(🧂, 📏)  
+        ActiveSupport::KeyGenerator.new(@@✍️).generate_key 🧂, ActiveSupport::MessageEncryptor.key_len
       )
       
       🥾 = !(not @@🗄️['〽️'])
@@ -86,7 +78,7 @@ class Uhide::Main
           begin
             📖 = ⚛️.decrypt_and_verify 📕
           rescue ActiveSupport::MessageVerifier::InvalidSignature
-            puts $‼️🔑
+            puts ‼️ 🔑
             exit!
           end
           
@@ -123,16 +115,8 @@ class Uhide::Main
       when :help
         puts "For help, quit and run `uhide -h` from your shell"
         
-      when :reset
-        if ❓(@@🔑, 😐: false) == @@✍️
-          ['〽️', '🧂', '📏'].each_entry { | 📂 | File.delete "./#{📂}" }
-          exit!
-        else
-          puts $‼️🔑
-        end
-        
       else
-        puts $‼️👾
+        puts ‼️('unsupported') + ' 👾'
       end
       
     end
@@ -158,3 +142,5 @@ class Uhide::Main
   end
   
 end
+
+Uhide::Main.✈️

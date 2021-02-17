@@ -1,9 +1,9 @@
 require 'optparse'
 require 'uhide'
 
-OptionParser.new do |📋|
-  📋.on('-h', '--help', 'Help') do |📚|
-    puts <<-HELP
+OptionParser.new do | 📋 |
+  📋.on '-h', '--help', 'Help' do | 📚 |
+    puts <<-📓
 Usage: uhide command [key-name] [key-value]
 Example: uhide set gmail mysecurepassword123
 Example: uhide get gmail
@@ -11,13 +11,14 @@ Example: uhide get gmail
 Get Started:
 
 1. run `uhide`
-2. You will see: 🔑 > . Choose a password you can remember and enter it.
+2. You will see a 🔑 prompt. Type a password you can remember and press enter.
 3. You can now run commands. Next time you run `uhide` from this directory, enter the same password to manage your sensitive information.
+4. Uhide stores encrypted data inside whatever directory you run it from.
 
 Commands and Optional Arguments:
 - get [key-name]
 - set [key-name] [key-value]
-    HELP
+    📓
     exit!
   end
   
