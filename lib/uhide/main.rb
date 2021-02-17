@@ -26,15 +26,15 @@ end
 
 def 🔓 🏷️: nil
   if 🏷️.nil?
-    puts $🗄️['ddllv']
+    puts $🗄️['〽️']
   else
-    puts $🗄️['ddllv'][🏷️]
+    puts $🗄️['〽️'][🏷️]
   end
   
 end
 
 def 🔒 🏷️, 💎
-  $🗄️['ddllv'][🏷️] = 💎
+  $🗄️['〽️'][🏷️] = 💎
   💾
 end
 
@@ -43,9 +43,9 @@ def 💾
     ActiveSupport::KeyGenerator.new($✍️).generate_key($🧂.call, $📏.call)  
   )
   
-  was_bootstrapped = !(not $🗄️['ddllv'])
-  📖 = 🗃️ 'ddllv', {}, ⚛️: ⚛️
-  📀 'ddllv', 📖, ⚛️: ⚛️ if was_bootstrapped
+  🥾 = !(not $🗄️['〽️'])
+  📖 = 🗃️ '〽️', {}, ⚛️: ⚛️
+  📀 '〽️', 📖, ⚛️: ⚛️ if 🥾
 end
 
 def 📀 🗂️, 📖, ⚛️: false
@@ -117,7 +117,7 @@ def 🤖 🗣️
     
   when :reset
     if ❓($🔑, simple: false) == $✍️
-      ['ddllv', '🧂', '📏'].each_entry { |item| File.delete "./#{item}" }
+      ['〽️', '🧂', '📏'].each_entry { |item| File.delete "./#{item}" }
       exit!
     else
       puts INVALID_🔑
