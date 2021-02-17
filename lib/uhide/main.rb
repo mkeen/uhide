@@ -24,10 +24,10 @@ class Uhide::Main
       🗑️.chomp
     end
     
-    def ❓ 🔑, simple: true
+    def ❓ 🔑, 😐: true
       print 🔑
       ✍️ = 🧼 STDIN.noecho(&:gets)
-      @@✍️ = ✍️ if simple
+      @@✍️ = ✍️ if 😐
       🚽
       return ✍️
     end
@@ -124,7 +124,7 @@ class Uhide::Main
         puts "For help, quit and run `uhide -h` from your shell"
         
       when :reset
-        if ❓(@@🔑, simple: false) == @@✍️
+        if ❓(@@🔑, 😐: false) == @@✍️
           ['〽️', '🧂', '📏'].each_entry { | 📂 | File.delete "./#{📂}" }
           exit!
         else
