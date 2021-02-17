@@ -125,7 +125,7 @@ class Uhide::Main
         
       when :reset
         if ❓(@@🔑, simple: false) == @@✍️
-          ['〽️', '🧂', '📏'].each_entry { |item| File.delete "./#{item}" }
+          ['〽️', '🧂', '📏'].each_entry { | 📂 | File.delete "./#{📂}" }
           exit!
         else
           puts $‼️🔑
@@ -145,7 +145,7 @@ class Uhide::Main
         
         loop do
           print @@☔
-          🤖(🧼 gets)
+          🤖 🧼 gets
         end
         
       rescue SystemExit, Interrupt
