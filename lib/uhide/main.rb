@@ -142,5 +142,3 @@ class Uhide::Main
   end
   
 end
-
-Uhide::Main.✈️
