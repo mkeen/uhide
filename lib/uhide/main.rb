@@ -1,5 +1,5 @@
-‼️🔑 = 'invalid key'.colorize(:magenta)
-‼️👾 = 'unsupported'.colorize(:magenta) + ' 👾'
+$‼️🔑 = 'invalid key'.colorize(:magenta)
+$‼️👾 = 'unsupported'.colorize(:magenta) + ' 👾'
 
 class Uhide::Main
   @@☔ = " ☔ > "
@@ -86,7 +86,7 @@ class Uhide::Main
           begin
             📖 = ⚛️.decrypt_and_verify 📕
           rescue ActiveSupport::MessageVerifier::InvalidSignature
-            puts ‼️🔑
+            puts $‼️🔑
             exit!
           end
           
@@ -128,11 +128,11 @@ class Uhide::Main
           ['〽️', '🧂', '📏'].each_entry { |item| File.delete "./#{item}" }
           exit!
         else
-          puts ‼️🔑
+          puts $‼️🔑
         end
         
       else
-        puts ‼️👾
+        puts $‼️👾
       end
       
     end
