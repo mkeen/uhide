@@ -31,15 +31,6 @@ def 🔓 🏷️: nil
     puts $🗄️['ddllv'][🏷️]
   end
   
-  📕 = File.read './🧂'
-  if 📕.empty?
-    🔀 = SecureRandom.random_bytes $📏.call
-    File.write './🧂', Marshal.dump(🔀)
-    return $🗄️['🧂'] = 🔀
-  else
-    return $🗄️['🧂'] = Marshal.load(File.read './🧂')
-  end
-  
 end
 
 def 🔒 🏷️, 💎
