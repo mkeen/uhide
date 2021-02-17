@@ -2,6 +2,7 @@ Gem::Specification.new do |s|
   s.name             = 'uhide'
   s.version          = '0.0.34'
   s.description      = "☂️ Personal encryption fit for a spy"
+  s.summary          = "Powered by emoji technology, this encrypted text store is a cut above."
   s.authors          = ["Mike Keen"]
   s.email            = 'mwk@mikekeen.com'
   s.files            = ["lib/uhide.rb", "lib/uhide/main.rb"]
