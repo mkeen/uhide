@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name             = 'uhide'
-  s.version          = '0.0.33'
+  s.version          = '0.0.34'
   s.description      = "☂️ Personal encryption fit for a spy"
   s.authors          = ["Mike Keen"]
   s.email            = 'mwk@mikekeen.com'
