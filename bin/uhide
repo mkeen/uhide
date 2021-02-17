@@ -1,11 +1,8 @@
 require 'optparse'
 require 'uhide'
 
-options = {}
-OptionParser.new do |opts|
-  opts.banner = "Usage: uhide command [key-name] [key-value]"
-
-  opts.on("-h", "--help", "Help") do |v|
+OptionParser.new do |📋|
+  📋.on('-h', '--help', 'Help') do |📚|
     puts <<-HELP
 Usage: uhide command [key-name] [key-value]
 Example: uhide set gmail mysecurepassword123
@@ -14,7 +11,7 @@ Example: uhide get gmail
 Get Started:
 
 1. run `uhide`
-2. You will be see: 🔑 > . Choose a password you can remember and enter it.
+2. You will see: 🔑 > . Choose a password you can remember and enter it.
 3. You can now run commands. Next time you run `uhide` from this directory, enter the same password to manage your sensitive information.
 
 Commands and Optional Arguments:
@@ -26,4 +23,4 @@ Commands and Optional Arguments:
   
 end.parse!
 
-Uhide::Main.start()
+Uhide::Main.✈️
